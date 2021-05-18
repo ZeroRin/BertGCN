@@ -1,5 +1,5 @@
 # BertGCN
-This repo contains code for BertGCN.
+This repo contains code for [BertGCN: Transductive Text Classification by Combining GCN and BERT](https://arxiv.org/abs/2105.05727).
 
 
 ## Introduction
@@ -43,3 +43,14 @@ Run `python train_bert_gcn.py -h` to see the full list of hyperparameters.
 ## Acknowledgement
 
 The data preprocess and graph construction are from [TextGCN](https://github.com/yao8839836/text_gcn)
+
+## Citation
+To appear in Findings of ACL 2021
+```angular2
+@article{lin2021bertgcn,
+  title={BertGCN: Transductive Text Classification by Combining GCN and BERT},
+  author={Lin, Yuxiao and Meng, Yuxian and Sun, Xiaofei and Han, Qinghong and Kuang, Kun and Li, Jiwei and Wu, Fei},
+  journal={arXiv preprint arXiv:2105.05727},
+  year={2021}
+}
+```
