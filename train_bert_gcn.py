@@ -204,9 +204,12 @@ def train_step(engine, batch):
     g.ndata['cls_feats'].detach_()
     train_loss = loss.item()
     with th.no_grad():
-        y_true = y_true.detach().cpu()
-        y_pred = y_pred.argmax(axis=1).detach().cpu()
-        train_acc = accuracy_score(y_true, y_pred)
+        if train_mask.sum() > 0:
+            y_true = y_true.detach().cpu()
+            y_pred = y_pred.argmax(axis=1).detach().cpu()
+            train_acc = accuracy_score(y_true, y_pred)
+        else:
+            train_acc = 1
     return train_loss, train_acc
 
 
