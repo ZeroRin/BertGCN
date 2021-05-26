@@ -40,6 +40,8 @@ to train the BertGCN.
 The model and training logs will be saved to `checkpoint/[bert_init]_[gcn_model]_[dataset]/` by default. 
 Run `python train_bert_gcn.py -h` to see the full list of hyperparameters.
 
+Trained BertGCN parameters can be downloaded [here](https://drive.google.com/file/d/1YUl7q34S3pu8KH17yOI68tvcedkrQ39a).
+
 ## Acknowledgement
 
 The data preprocess and graph construction are from [TextGCN](https://github.com/yao8839836/text_gcn)
