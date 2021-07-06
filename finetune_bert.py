@@ -24,8 +24,6 @@ parser.add_argument('--bert_init', type=str, default='roberta-base',
                     choices=['roberta-base', 'roberta-large', 'bert-base-uncased', 'bert-large-uncased'])
 parser.add_argument('--checkpoint_dir', default=None, help='checkpoint directory, [bert_init]_[dataset] if not specified')
 
-parser = argparse.ArgumentParser()
-
 args = parser.parse_args()
 
 max_length = args.max_length
@@ -34,6 +32,7 @@ nb_epochs = args.nb_epochs
 bert_lr = args.bert_lr
 dataset = args.dataset
 bert_init = args.bert_init
+checkpoint_dir = args.checkpoint_dir
 if checkpoint_dir is None:
     ckpt_dir = './checkpoint/{}_{}'.format(bert_init, dataset)
 else:
