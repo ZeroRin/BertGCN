@@ -186,6 +186,7 @@ def log_training_results(trainer):
             )
         )
         log_training_results.best_val_acc = val_acc
+    scheduler.step()
 
         
 log_training_results.best_val_acc = 0
