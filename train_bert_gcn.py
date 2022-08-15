@@ -5,6 +5,7 @@ from utils import *
 import dgl
 import torch.utils.data as Data
 from ignite.engine import Events, create_supervised_evaluator, create_supervised_trainer, Engine
+from ignite.contrib.handlers.tqdm_logger import ProgressBar
 from ignite.metrics import Accuracy, Loss
 from sklearn.metrics import accuracy_score
 import numpy as np
@@ -214,6 +215,8 @@ def train_step(engine, batch):
 
 
 trainer = Engine(train_step)
+pbar = ProgressBar()
+pbar.attach(trainer)
 
 
 @trainer.on(Events.EPOCH_COMPLETED)
